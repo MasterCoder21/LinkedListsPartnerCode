@@ -1,25 +1,25 @@
-#include "node.h"
+#ifndef NODE_H
+#define NODE_H
 
-Node::Node(Student* student) {
-    this->student = student;
-}
+#include "student.h"
 
-Node::~Node() {
-    delete student;
-}
+class Node
+{
+public:
+    Node(Student *student);
+    ~Node();
+    Node *getNext();
+    void setNext(Node *next);
+    Student *getStudent();
 
-Node* Node::getNext() {
-    return this->next;
-}
+private:
+    Node *next;
+    Student *student;
+};
 
-void Node::setNext(Node* next) {
-    this->next = next;
-}
-
-Student* Node::getStudent() {
-    return this->student;
-}
-
-void Node::setStudent(Student* student) {
-    this->student = student;
-}
+#endif // NODE_H
+/*
+This is the Node class!  
+It represents a Node in the linked list.  
+It contains a Student pointer and another Node pointer, which points to the next Node in the series.
+*/
